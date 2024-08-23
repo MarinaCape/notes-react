@@ -1,0 +1,15 @@
+export const BaseTheme = {
+  primary: '',
+  secondary: '#d2ba96',
+  background: '#ebe3d6',
+  accent: '#be8e25',
+  text: '#453824',
+  brown671: '#a69671',
+  brownD4C: '#826d4c',
+  brown2D5: '#ece2d5',
+  brownE6D: '#a38e6d',
+  white: '#ffffff',
+  brown0C0: '#d8d0c0',
+  brownB97: '#d3bb97',
+  brown5BC: '#e6d5bc',
+};
