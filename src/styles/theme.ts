@@ -13,3 +13,19 @@ export const BaseTheme = {
   brownB97: '#d3bb97',
   brown5BC: '#e6d5bc',
 };
+
+export const DarkTheme = {
+  primary: '',
+  secondary: '#a3855f',
+  background: '#2b2520',
+  accent: '#805a17',
+  text: '#cfc2b2',
+  brown671: '#6b6047',
+  brownD4C: '#574930',
+  brown2D5: '#3b332b',
+  brownE6D: '#665943',
+  white: '#e6e6e6',
+  brown0C0: '#554c3c',
+  brownB97: '#7c6440',
+  brown5BC: '#584835',
+};

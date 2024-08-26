@@ -6,7 +6,7 @@ export const LabelContainer = styled.label`
   position: relative;
 `;
 
-export const CheckBoxStyled = styled.input`
+export const CheckBoxStyled = styled.input<{ $checked: boolean }>`
   appearance: none;
   height: 1.3rem;
   width: 1.3rem;
@@ -17,7 +17,7 @@ export const CheckBoxStyled = styled.input`
   justify-content: center;
   align-items: center;
   &::after {
-    content: 'X';
+    content: ${(props) => (props.$checked ? '"X"' : '')};
     color: white;
     margin: auto;
   }

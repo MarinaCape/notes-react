@@ -1,12 +1,12 @@
-import { ThemeProvider } from 'styled-components';
 import { Home } from './pages/home/home.page';
-import { BaseTheme } from './styles/theme';
+import { Provider } from 'react-redux';
+import { store } from './store/root.store';
 
 function App() {
   return (
-    <ThemeProvider theme={BaseTheme}>
+    <Provider store={store}>
       <Home></Home>
-    </ThemeProvider>
+    </Provider>
   );
 }
 
