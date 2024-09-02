@@ -2,7 +2,7 @@ import { ButtonComponent } from '../../../../components/button/button.component'
 import { CheckboxComponent } from '../../../../components/checkbox/checkbox.component';
 import { Description, InfoContainer, NoteItemContainer, RightContainer, WrapperArrow } from './note-item.styles';
 import { Note } from '../../../../models/note';
-import { useModify } from '../../../../hooks/useNotes';
+import { useModifyNote } from '../../../../hooks/useNotes';
 import { useState } from 'react';
 import { IoIosArrowDown as ArrowDownIcon, IoIosArrowUp as ArrowUpIcon } from 'react-icons/io';
 import { BaseTheme } from '../../../../styles/theme';
@@ -14,7 +14,7 @@ interface NoteItemProps {
 }
 
 export const NoteItemComponent = ({ note, deleteNoteCallback, updateNoteCallback }: NoteItemProps) => {
-  const { mutateAsync } = useModify();
+  const { mutateAsync } = useModifyNote();
   const [finished, setFinished] = useState(note.finished);
   const [showDescription, setShowDescription] = useState(false);
 
@@ -35,7 +35,9 @@ export const NoteItemComponent = ({ note, deleteNoteCallback, updateNoteCallback
       </InfoContainer>
       <RightContainer>
         {note.description && (
-          <WrapperArrow onClick={handleShowDescription}>{showDescription ? <ArrowUpIcon size={25} /> : <ArrowDownIcon size={25} />}</WrapperArrow>
+          <WrapperArrow data-testid="arrow-button" onClick={handleShowDescription}>
+            {showDescription ? <ArrowUpIcon size={25} /> : <ArrowDownIcon size={25} />}
+          </WrapperArrow>
         )}
         <ButtonComponent
           onClick={updateNoteCallback}

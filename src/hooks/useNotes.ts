@@ -11,7 +11,7 @@ export const useNotes = () => {
   };
 };
 
-export const useModify = () => {
+export const useModifyNote = () => {
   const client = useQueryClient();
   return useMutation({
     mutationFn: (note: Note) => {

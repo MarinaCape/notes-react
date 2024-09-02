@@ -5,7 +5,7 @@ import { FieldType } from '../../../../components/field/input.model';
 import { Note } from '../../../../models/note';
 import { LabelStyled, ModalBackground, ModalContainer, TextAreaStyled, Title, Wrapper, WrapperIconClose } from './note-modal.styles';
 import { v4 as uuidv4 } from 'uuid';
-import { useCreateNote, useModify } from '../../../../hooks/useNotes';
+import { useCreateNote, useModifyNote } from '../../../../hooks/useNotes';
 import { IoCloseSharp as CloseIcon } from 'react-icons/io5';
 import { BaseTheme } from '../../../../styles/theme';
 
@@ -17,7 +17,7 @@ interface NoteModalComponent {
 
 export const NoteModalComponent = ({ note, show, closeCallback }: NoteModalComponent) => {
   const { mutate: createNote } = useCreateNote();
-  const { mutate: modifyNote } = useModify();
+  const { mutate: modifyNote } = useModifyNote();
   const inputTitleRef = useRef<HTMLInputElement>(null);
   const inputDescriptionRef = useRef<HTMLTextAreaElement>(null);
   if (!show) return;
