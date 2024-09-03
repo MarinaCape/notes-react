@@ -41,7 +41,7 @@ export const NoteModalComponent = ({ note, show, closeCallback }: NoteModalCompo
     <ModalBackground onClick={closeCallback}>
       <ModalContainer onClick={(e) => e.stopPropagation()}>
         <WrapperIconClose>
-          <CloseIcon onClick={closeCallback} color={BaseTheme.text} size={30} cursor={'pointer'} />
+          <CloseIcon data-testid="close-button" onClick={closeCallback} color={BaseTheme.text} size={30} cursor={'pointer'} />
         </WrapperIconClose>
         <Title>{!!note ? 'Update note' : 'Create note'}</Title>
         <LabelStyled>Title</LabelStyled>
