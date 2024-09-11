@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import HeaderComponent from '../../components/header/header.component';
 import { useDeleteNote, useNotes } from '../../hooks/useNotes';
-import { NoteItemComponent } from './components/note-item/note-item.component';
+import NoteItemComponent from './components/note-item/note-item.component';
 import { CenterContainer, HomeContainer, LabelStyled, NoteListContainer } from './home.styles';
-import { NoteModalComponent } from './components/note-modal/note-modal.component';
+import NoteModalComponent from './components/note-modal/note-modal.component';
 import { Note } from '../../models/note';
 import { useAppSelector } from '../../store/root.hooks';
 import { selectTheme } from '../../store/states/theme.slice';
@@ -11,7 +11,7 @@ import { ThemeProvider } from 'styled-components';
 import { Theme } from '../../styles/theme.model';
 import { BaseTheme, DarkTheme } from '../../styles/theme';
 
-export const Home = () => {
+const Home = () => {
   const [searchText, setSearchText] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [noteSelected, setNoteSelected] = useState<Note | undefined>(undefined);
@@ -44,7 +44,7 @@ export const Home = () => {
         {(isLoading || isError) && (
           <CenterContainer>
             {isLoading && <LabelStyled>Loading...</LabelStyled>}
-            {isError && <LabelStyled>Ha ocurrido un error en la carga de datos.</LabelStyled>}
+            {isError && <LabelStyled>Something when wrong.</LabelStyled>}
           </CenterContainer>
         )}
         {!isLoading && !isError && (
@@ -66,3 +66,5 @@ export const Home = () => {
     </ThemeProvider>
   );
 };
+
+export default Home;

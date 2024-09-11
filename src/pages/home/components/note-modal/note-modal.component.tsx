@@ -15,7 +15,7 @@ interface NoteModalComponent {
   closeCallback?: () => void;
 }
 
-export const NoteModalComponent = ({ note, show, closeCallback }: NoteModalComponent) => {
+const NoteModalComponent = ({ note, show, closeCallback }: NoteModalComponent) => {
   const { mutate: createNote } = useCreateNote();
   const { mutate: modifyNote } = useModifyNote();
   const inputTitleRef = useRef<HTMLInputElement>(null);
@@ -69,3 +69,5 @@ export const NoteModalComponent = ({ note, show, closeCallback }: NoteModalCompo
     </ModalBackground>
   );
 };
+
+export default NoteModalComponent;

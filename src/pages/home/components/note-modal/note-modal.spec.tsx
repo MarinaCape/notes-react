@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { NoteModalComponent } from './note-modal.component';
+import NoteModalComponent from './note-modal.component';
 import { Note } from '../../../../models/note';
 import { useCreateNote, useModifyNote } from '../../../../hooks/useNotes';
 

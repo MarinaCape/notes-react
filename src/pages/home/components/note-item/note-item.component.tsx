@@ -13,7 +13,7 @@ interface NoteItemProps {
   deleteNoteCallback?: (nodeId: string) => void;
 }
 
-export const NoteItemComponent = ({ note, deleteNoteCallback, updateNoteCallback }: NoteItemProps) => {
+const NoteItemComponent = ({ note, deleteNoteCallback, updateNoteCallback }: NoteItemProps) => {
   const { mutateAsync } = useModifyNote();
   const [finished, setFinished] = useState(note.finished);
   const [showDescription, setShowDescription] = useState(false);
@@ -61,3 +61,5 @@ export const NoteItemComponent = ({ note, deleteNoteCallback, updateNoteCallback
     </NoteItemContainer>
   );
 };
+
+export default NoteItemComponent;
